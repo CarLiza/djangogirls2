@@ -16,13 +16,27 @@
 <body>
     <header class="page-header">
         <div class="container">
+            
             {% if user.is_authenticated %}
+                <!--This button is to add a new post-->
                 <a href="{% url 'post_new' %}" class="top-menu">
                     {% include './icons/file-earmark-plus.svg' %}
                 </a>
-                <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+                <!--This button is to see the drafts a new post-->
+                <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit">Drafts</span></a>
+                <!--This button is to log out-->
+                <a href="{% url 'logout' %}" class="top-menu">
+                    {% include './icons/door-open-fill.svg' %}
+                </a>
+                <span class="top-menu glyphicon glyphicon-lock">Log out</span>
+            {% else %}
+                <a href="{% url 'login' %}" class="top-menu">
+                    {% include './icons/door-open.svg' %}
+                </a>
+                <span class="top-menu glyphicon glyphicon-lock">Log in</span>
             {% endif %}
             <h1><a href="/">Django Girls Blog</a></h1>
+            <h1 >Hello {{ user.username }}</h1>
         </div>
     </header>
     <main class="container">

@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-@(gpe08%b=4n!m)n^f!xby+#hko)8-#sr!1o)s65h4^ps(7=mt
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
-
+# when the login page is accessed directly, it will redirect a successful login to the top-level index (the homepage of our blog).
+LOGIN_REDIRECT_URL = '/'
 
 # Application definition
 
