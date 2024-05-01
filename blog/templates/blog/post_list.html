@@ -23,6 +23,7 @@
                 <!--<h2><a href="">{{ post.title }}</a></h2> old one-->
                 <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2> <!--new one-->
                 <p>{{ post.text|linebreaksbr }}</p>
+                <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
             </article>
         {% endfor %}
     {% endblock %}
